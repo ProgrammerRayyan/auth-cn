@@ -8,8 +8,20 @@ Auth CN provides authentication UI components and starter configurations that yo
 
 ## Installation
 
+Add the auth-ui registry in your components.json
+
+```json
+{
+  "registries": {
+    "@auth-cn": "https://auth.uprizing.me/r/{name}.json",
+  }
+}
+```
+
+Add components using the shadcn CLI:
+
 ```bash
-npx shadcn@latest add "https://authcn.dev/r/[component-name]"
+npx shadcn@latest add @auth-cn/[component-name]
 ```
 
 ## Features
