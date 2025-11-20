@@ -49,10 +49,7 @@ export default function Page() {
               <StepContent>
                 <DocsParagraph>
                   Run the init command to create a new Next.js project or to
-                  setup an existing one{" "}
-                  <DocsLink href="https://ui.shadcn.com" _blank>
-                    Shadcn UI Docs
-                  </DocsLink>
+                  setup an existing one.
                 </DocsParagraph>
                 <DocsCodeCommandX command="shadcn@latest init" />
               </StepContent>
@@ -111,7 +108,7 @@ export default function Page() {
                   >
                     components.json
                   </DocsLink>{" "}
-                  file in the root of your project. file
+                  file in the root of your project.
                 </DocsParagraph>
                 <DocsCodeBlock
                   name="components.json"
@@ -161,7 +158,7 @@ export default function Page() {
                   >
                     components.json
                   </DocsLink>{" "}
-                  file in the root of your project. file
+                  file in the root of your project.
                 </DocsParagraph>
                 <DocsCodeBlock
                   name="components.json"
