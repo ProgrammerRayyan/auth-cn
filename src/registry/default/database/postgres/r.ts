@@ -5,6 +5,7 @@ import {
   p,
   subdesc,
   subtitle,
+  tabs,
   title,
 } from "@/types/docs";
 import type { RegistryItem } from "@/types/registry";
@@ -53,11 +54,43 @@ export const docs = [
   desc(
     "Install Better Auth with PostgreSQL, or PostgreSQL + Redis as a secondary storage (caching).",
   ),
-  codeCommandX("shadcn@latest add @auth-cn/postgres"),
-  subdesc("Better Auth + PostgreSQL"),
+  tabs([
+    {
+      label: "NextJS",
+      value: "nextjs",
+      content: [
+        codeCommandX("shadcn@latest add @auth-cn/postgres"),
+        subdesc("Better Auth + PostgreSQL"),
 
-  codeCommandX("shadcn@latest add @auth-cn/postgres-redis"),
-  subdesc("Better Auth + PostgreSQL + Redis as a secondary storage (caching)"),
+        codeCommandX("shadcn@latest add @auth-cn/postgres-redis"),
+        subdesc(
+          "Better Auth + PostgreSQL + Redis as a secondary storage (caching)",
+        ),
+      ],
+    },
+    {
+      label: "Hono",
+      value: "hono",
+      content: [
+        codeCommandX("shadcn@latest add @auth-cn/postgres-hono"),
+        subdesc("Better Auth + PostgreSQL"),
+
+        codeCommandX("shadcn@latest add @auth-cn/postgres-redis-hono"),
+        subdesc(
+          "Better Auth + PostgreSQL + Redis as a secondary storage (caching)",
+        ),
+      ],
+    },
+    {
+      label: "ElysiaJS",
+      value: "elysiajs",
+      content: [
+        codeCommandX("shadcn@latest add @auth-cn/postgres"),
+        subdesc("Better Auth + PostgreSQL."),
+        desc("Este es otro ejemplo de como puedes meter más componentes."),
+      ],
+    },
+  ]),
 
   subtitle("Schema Generation & Migration"),
   p(
