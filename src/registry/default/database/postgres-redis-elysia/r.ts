@@ -10,7 +10,7 @@ export const item: RegistryItem = {
       type: "registry:lib",
     },
     {
-      path: "route.ts",
+      path: "index.ts",
       type: "registry:item",
       target: "index.ts",
     },
