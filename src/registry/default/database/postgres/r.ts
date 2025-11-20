@@ -85,9 +85,13 @@ export const docs = [
       label: "ElysiaJS",
       value: "elysiajs",
       content: [
-        codeCommandX("shadcn@latest add @auth-cn/postgres"),
-        subdesc("Better Auth + PostgreSQL."),
-        desc("Este es otro ejemplo de como puedes meter más componentes."),
+        codeCommandX("shadcn@latest add @auth-cn/postgres-elysia"),
+        subdesc("Better Auth + PostgreSQL"),
+
+        codeCommandX("shadcn@latest add @auth-cn/postgres-redis-elysia"),
+        subdesc(
+          "Better Auth + PostgreSQL + Redis as a secondary storage (caching)",
+        ),
       ],
     },
   ]),

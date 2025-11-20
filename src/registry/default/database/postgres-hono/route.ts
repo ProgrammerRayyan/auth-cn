@@ -1,5 +1,5 @@
 import { Hono } from "hono";
-import { auth } from "@/lib/auth";
+import { auth } from "@/registry/default/database/postgres-hono/auth";
 
 const authRoutes = new Hono();
 
