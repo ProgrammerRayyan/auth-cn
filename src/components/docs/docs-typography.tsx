@@ -3,7 +3,6 @@
 import { Code2, EyeIcon } from "lucide-react";
 import Image from "next/image";
 import { Link } from "next-view-transitions";
-import type { ImgHTMLAttributes } from "react";
 import type { BundledLanguage } from "shiki";
 import { IconCodeEditor, IconLink } from "@/assets";
 import Code from "@/components/ui/code";
@@ -20,45 +19,15 @@ import { cn } from "@/lib/utils";
 import { InstallCommandGroup } from "../install-command-group";
 import { OpenInV0Button } from "../open-v0";
 import "@/styles/image-zoom.css";
-import Zoom, { type UncontrolledProps } from "react-medium-image-zoom";
+import Zoom from "react-medium-image-zoom";
 import { Button } from "@/components/ui/button";
+import type { ImageZoomProps } from "@/types/image-zoom";
 import { DocsCodeCommand, DocsCodeCommandX } from "./docs-code-commands";
 
 function getImageSrc(src: ImageZoomProps["src"]): string {
   if (typeof src === "string") return src;
   return src.src;
 }
-export type ImageZoomProps = {
-  /**
-   * Image source (string or StaticImageData)
-   */
-  src: string | { src: string; width: number; height: number };
-
-  /**
-   * Image alt text
-   */
-  alt: string;
-
-  /**
-   * Image width
-   */
-  width?: number | string;
-
-  /**
-   * Image height
-   */
-  height?: number | string;
-
-  /**
-   * Image props when zoom in
-   */
-  zoomInProps?: ImgHTMLAttributes<HTMLImageElement>;
-
-  /**
-   * Props for `react-medium-image-zoom`
-   */
-  rmiz?: UncontrolledProps;
-};
 
 const DocsTitle = ({
   className,
@@ -152,7 +121,7 @@ const DocsContainerLinks = ({
         <Link
           key={link.href}
           href={link.href}
-          target={link._blank ? "_blank" : "_self"}
+          target={link._blank !== false ? "_blank" : "_self"}
           className="border bg-card hover:text-primary rounded-sm px-2 text-xs shadow-xs hover:bg-accent dark:bg-input/50 dark:border-input dark:hover:bg-input/70 group"
         >
           {link.title}
