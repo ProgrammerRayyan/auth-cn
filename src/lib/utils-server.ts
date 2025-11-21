@@ -42,7 +42,8 @@ export async function getRegistryItem(category: string, name: string) {
 
   const module = await import(`@/registry/default/${category}/${folder}/r.ts`);
 
-  return module.item;
+  // Try to get item first, fallback to route if item doesn't exist
+  return module.item || module.route || null;
 }
 
 export async function getRegistryDocs(category: string, name: string) {
@@ -138,7 +139,13 @@ export async function getSidebarItems(): Promise<
             const module = await import(
               `@/registry/default/${category}/${folder}/r.ts`
             );
-            const item = module.item;
+
+            // Try to get item first, fallback to route
+            const data = module.item || module.route;
+
+            if (!data) {
+              continue;
+            }
 
             // Validate that docs exist
             if (!module.docs) {
@@ -148,7 +155,7 @@ export async function getSidebarItems(): Promise<
 
             items[category].push({
               name: folder,
-              title: item.title || folder,
+              title: data.title || folder,
               url: `/docs/${category}/${folder}`,
             });
           } catch (error) {
@@ -156,6 +163,9 @@ export async function getSidebarItems(): Promise<
           }
         }
       }
+
+      // Sort items alphabetically by title
+      items[category].sort((a, b) => a.title.localeCompare(b.title));
     }
   }
 
