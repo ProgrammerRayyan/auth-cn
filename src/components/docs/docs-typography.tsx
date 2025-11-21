@@ -21,8 +21,8 @@ import { InstallCommandGroup } from "../install-command-group";
 import { OpenInV0Button } from "../open-v0";
 import "@/styles/image-zoom.css";
 import Zoom, { type UncontrolledProps } from "react-medium-image-zoom";
-import { DocsCodeCommand, DocsCodeCommandX } from "./docs-code-commands";
 import { Button } from "@/components/ui/button";
+import { DocsCodeCommand, DocsCodeCommandX } from "./docs-code-commands";
 
 function getImageSrc(src: ImageZoomProps["src"]): string {
   if (typeof src === "string") return src;

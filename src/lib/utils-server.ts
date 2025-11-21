@@ -153,7 +153,7 @@ export async function generateStaticParamsServer() {
             );
 
             // Only add params for items that have 'item' export (for view)
-            if (module.item && module.item.name) {
+            if (module.item?.name) {
               params.push({ category, name: module.item.name });
             }
           } catch (error) {

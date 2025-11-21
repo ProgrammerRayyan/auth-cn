@@ -9,7 +9,6 @@ import {
   DocsTabs,
   DocsTitle,
 } from "@/components/docs/docs-typography";
-import { Separator } from "@/components/ui/separator";
 
 import { Step, StepContent, Steps } from "@/components/ui/steps";
 import { TabsContent } from "@/components/ui/tabs";
