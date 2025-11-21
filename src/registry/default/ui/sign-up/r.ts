@@ -1,5 +1,5 @@
 import { getComponentCode } from "@/lib/get-component-code";
-import { codePreview, desc, title, subtitle, links } from "@/types/docs";
+import { codePreview, desc, links, subtitle, title } from "@/types/docs";
 import type Route from "@/types/route";
 import SignUp01 from "../sign-up-01/component";
 import SignUp02 from "../sign-up-02/component";
@@ -17,14 +17,15 @@ export const docs = async () => {
   return [
     title("Sign up components"),
     desc(route.description),
-    links(["Tailark", "https://tailark.com/sign-in"]),
 
     subtitle("Sign Up 01"),
     desc("A setup for Better Auth with a simple Tailark sign-up"),
+    links(["Tailark", "https://tailark.com/sign-up"]),
     codePreview("sign-up-01", SignUp01, signUp01, "tsx"),
 
     subtitle("Sign Up 02"),
     desc("A setup for Better Auth with a simple Tailark sign-up"),
+    links(["Tailark", "https://tailark.com/sign-up"]),
     codePreview("sign-up-02", SignUp02, signUp02, "tsx"),
   ];
 };
