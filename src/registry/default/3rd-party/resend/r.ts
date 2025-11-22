@@ -3,7 +3,6 @@ import {
   codeCommandX,
   desc,
   links,
-  p,
   subtitle,
   title,
 } from "@/types/docs";

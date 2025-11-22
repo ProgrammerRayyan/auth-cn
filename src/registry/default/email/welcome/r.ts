@@ -31,7 +31,8 @@ export const auth = betterAuth({
             from: "Acme <onboarding@resend.dev>",
             to: user.email,
             subject: "Welcome to Our Service!",
-            react: WelcomeEmail({ name: user.name }),
+            // Provide name and email.
+            react: WelcomeEmail({ name: user.name, email: user.email }),
           });
         },
       },
@@ -42,7 +43,9 @@ export const auth = betterAuth({
 
 export const docs = [
   title(route.title as string),
-  desc(route.description as string),
+  desc(
+    "Add pre-built welcome email templates to send when a user registers, welcoming them.",
+  ),
   links(
     ["Resend", "https://resend.com"],
     ["Resend installation", "/docs/3rd-party/resend"],
@@ -53,43 +56,43 @@ export const docs = [
     "Make sure you have Resend integration installed & add the database hook to your configuration.",
   ),
   codeCommandX("shadcn@latest add @auth-cn/resend"),
-  subdesc("Check 3drd-party/resend docs for more information."),
+  subdesc("Check 3rd-party/resend docs for more information."),
   codeBlock("lib/auth.ts", code, "ts"),
   subdesc("Add the database hook to send welcome email."),
 
   subtitle("Vercel"),
   desc("Email template integrated with Vercel branding."),
-  image("/og.png", "test"),
+  image("/email/vercel-welcome.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-Vercel-welcome"),
   subdesc("Add template"),
 
   subtitle("Linear"),
   desc("Email template integrated with Linear branding."),
-  image("/og.png", "test"),
+  image("/email/linear-welcome.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-linear-welcome"),
   subdesc("Add template"),
 
   subtitle("Raycast"),
   desc("Email template integrated with Raycast branding."),
-  image("/og.png", "test"),
+  image("/email/raycast-welcome.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-raycast-welcome"),
   subdesc("Add template"),
 
   subtitle("Notion"),
   desc("Email template integrated with Notion branding."),
-  image("/og.png", "test"),
+  image("/email/notion-welcome.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-notion-welcome"),
   subdesc("Add template"),
 
   subtitle("Slack"),
   desc("Email template integrated with Slack branding."),
-  image("/og.png", "test"),
+  image("/email/slack-welcome.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-slack-welcome"),
   subdesc("Add template"),
 
   subtitle("Stripe"),
   desc("Email template integrated with Stripe branding."),
-  image("/og.png", "test"),
+  image("/email/stripe-welcome.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-stripe-welcome"),
   subdesc("Add template"),
 ];

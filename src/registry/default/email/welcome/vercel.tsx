@@ -2,6 +2,7 @@ import {
   Body,
   Button,
   Container,
+  Font,
   Head,
   Heading,
   Hr,
@@ -13,7 +14,6 @@ import {
   Section,
   Tailwind,
   Text,
-  Font,
 } from "@react-email/components";
 
 interface WelcomeEmailProps {
