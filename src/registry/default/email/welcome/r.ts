@@ -1,9 +1,10 @@
 import {
+  codeBlock,
   codeCommandX,
   desc,
   image,
   links,
-  p,
+  subdesc,
   subtitle,
   title,
 } from "@/types/docs";
@@ -15,77 +16,185 @@ export const route: Route = {
   description: "Pre-built welcome email templates.",
 };
 
+const code = `import { betterAuth } from "better-auth";
+// Your email template...
+import { WelcomeEmail } from "@/emails/vercel-welcome";
+import { sendEmail } from "@/lib/resend";
+
+export const auth = betterAuth({
+  // Your auth configuration...
+  databaseHooks: {
+    user: {
+      create: {
+        after: async (user) => {
+          sendEmail({
+            from: "Acme <onboarding@resend.dev>",
+            to: user.email,
+            subject: "Welcome to Our Service!",
+            react: WelcomeEmail({ name: user.name }),
+          });
+        },
+      },
+    },
+  },
+});
+`;
+
 export const docs = [
   title(route.title as string),
   desc(route.description as string),
-  links(["Resend", "https://resend.com"]),
+  links(
+    ["Resend", "https://resend.com"],
+    ["Resend installation", "/docs/3rd-party/resend"],
+  ),
+
+  subtitle("Prerequisites"),
+  desc(
+    "Make sure you have Resend integration installed & add the database hook to your configuration.",
+  ),
+  codeCommandX("shadcn@latest add @auth-cn/resend"),
+  subdesc("Check 3drd-party/resend docs for more information."),
+  codeBlock("lib/auth.ts", code, "ts"),
+  subdesc("Add the database hook to send welcome email."),
 
   subtitle("Vercel"),
-  p("Email template integrated with Vercel branding."),
-  image("/email/email-vercel.png", "test", 400),
+  desc("Email template integrated with Vercel branding."),
+  image("/og.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-Vercel-welcome"),
+  subdesc("Add template"),
 
   subtitle("Linear"),
-  p("Email template integrated with Linear branding."),
+  desc("Email template integrated with Linear branding."),
   image("/og.png", "test"),
   codeCommandX("shadcn@latest add @auth-cn/email-linear-welcome"),
+  subdesc("Add template"),
 
   subtitle("Raycast"),
-  p("Email template integrated with Raycast branding."),
+  desc("Email template integrated with Raycast branding."),
   image("/og.png", "test"),
-  desc("Preview email."),
   codeCommandX("shadcn@latest add @auth-cn/email-raycast-welcome"),
+  subdesc("Add template"),
 
   subtitle("Notion"),
-  p("Email template integrated with Notion branding."),
+  desc("Email template integrated with Notion branding."),
   image("/og.png", "test"),
-  desc("Preview email."),
   codeCommandX("shadcn@latest add @auth-cn/email-notion-welcome"),
+  subdesc("Add template"),
 
   subtitle("Slack"),
-  p("Email template integrated with Slack branding."),
+  desc("Email template integrated with Slack branding."),
   image("/og.png", "test"),
-  desc("Preview email."),
   codeCommandX("shadcn@latest add @auth-cn/email-slack-welcome"),
+  subdesc("Add template"),
 
   subtitle("Stripe"),
-  p("Email template integrated with Stripe branding."),
+  desc("Email template integrated with Stripe branding."),
   image("/og.png", "test"),
-  desc("Preview email."),
   codeCommandX("shadcn@latest add @auth-cn/email-stripe-welcome"),
+  subdesc("Add template"),
 ];
 
 export const items: RegistryItem[] = [
+  // Vercel
   {
-    name: "email-01",
-    type: "registry:block",
+    name: "email-Vercel-welcome",
+    type: "registry:item",
+    title: "Welcome Email with Vercel",
+    description: "Welcome email template integrated with Vercel branding.",
+    files: [
+      {
+        path: "vercel.tsx",
+        type: "registry:item",
+        target: "emails/vercel-welcome.tsx",
+      },
+    ],
+    dependencies: ["resend", "@react-email/components"],
+    devDependencies: ["react-email"],
+    docs: "Check https://auth.uprizing.me/docs/email/welcome",
+  },
+  // Linear
+  {
+    name: "email-linear-welcome",
+    type: "registry:item",
+    title: "Welcome Email with Linear",
+    description: "Welcome email template integrated with Linear branding.",
+    files: [
+      {
+        path: "linear.tsx",
+        type: "registry:item",
+        target: "emails/linear-welcome.tsx",
+      },
+    ],
+    dependencies: ["resend", "@react-email/components"],
+    devDependencies: ["react-email"],
+    docs: "Check https://auth.uprizing.me/docs/email/welcome",
+  },
+  // Raycast
+  {
+    name: "email-raycast-welcome",
+    type: "registry:item",
+    title: "Welcome Email with Raycast",
+    description: "Welcome email template integrated with Raycast branding.",
+    files: [
+      {
+        path: "raycast.tsx",
+        type: "registry:item",
+        target: "emails/raycast-welcome.tsx",
+      },
+    ],
+    dependencies: ["resend", "@react-email/components"],
+    devDependencies: ["react-email"],
+    docs: "Check https://auth.uprizing.me/docs/email/welcome",
+  },
+  // Notion
+  {
+    name: "email-notion-welcome",
+    type: "registry:item",
+    title: "Welcome Email with Notion",
+    description: "Welcome email template integrated with Notion branding.",
+    files: [
+      {
+        path: "notion.tsx",
+        type: "registry:item",
+        target: "emails/notion-welcome.tsx",
+      },
+    ],
+    dependencies: ["resend", "@react-email/components"],
+    devDependencies: ["react-email"],
+    docs: "Check https://auth.uprizing.me/docs/email/welcome",
+  },
+  // Slack
+  {
+    name: "email-slack-welcome",
+    type: "registry:item",
+    title: "Welcome Email with Slack",
+    description: "Welcome email template integrated with Slack branding.",
+    files: [
+      {
+        path: "slack.tsx",
+        type: "registry:item",
+        target: "emails/slack-welcome.tsx",
+      },
+    ],
+    dependencies: ["resend", "@react-email/components"],
+    devDependencies: ["react-email"],
+    docs: "Check https://auth.uprizing.me/docs/email/welcome",
+  },
+  // Stripe
+  {
+    name: "email-stripe-welcome",
+    type: "registry:item",
     title: "Welcome Email with Stripe",
     description: "Welcome email template integrated with Stripe branding.",
     files: [
       {
         path: "stripe.tsx",
-        type: "registry:lib",
+        type: "registry:item",
+        target: "emails/stripe-welcome.tsx",
       },
     ],
     dependencies: ["resend", "@react-email/components"],
     devDependencies: ["react-email"],
-    envVars: {
-      RESEND_API_KEY: "re_xxxxxxxxx",
-    },
     docs: "Check https://auth.uprizing.me/docs/email/welcome",
-  },
-
-  {
-    name: "resend-email-template",
-    type: "registry:block",
-    title: "Resend Email Template",
-    description: "Email template component for Resend.",
-    files: [
-      {
-        path: "stripe.tsx",
-        type: "registry:component",
-      },
-    ],
-    dependencies: ["@react-email/components"],
   },
 ];
