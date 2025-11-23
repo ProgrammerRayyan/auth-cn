@@ -12,7 +12,6 @@ import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import {
   Tooltip,
   TooltipContent,
-  TooltipProvider,
   TooltipTrigger,
 } from "@/components/ui/tooltip";
 import { cn } from "@/lib/utils";
@@ -20,7 +19,6 @@ import { InstallCommandGroup } from "../install-command-group";
 import { OpenInV0Button } from "../open-v0";
 import "@/styles/image-zoom.css";
 import Zoom from "react-medium-image-zoom";
-import { Button } from "@/components/ui/button";
 import type { ImageZoomProps } from "@/types/image-zoom";
 import { DocsCodeCommand, DocsCodeCommandX } from "./docs-code-commands";
 
@@ -226,15 +224,15 @@ const DocsCodePreview = ({
   component: Component,
   code,
   language,
-  category,
-  itemName,
+  // category,
+  // itemName,
 }: {
   name: string;
   component: React.ComponentType;
   code: string;
   language: string;
-  category?: string;
-  itemName?: string;
+  // category?: string;
+  // itemName?: string;
 }) => {
   return (
     <div className="w-full max-w-5xl mx-auto rounded-xl border dark:[--color-muted:var(--color-zinc-900)] overflow-hidden flex flex-col mt-4">
@@ -252,7 +250,9 @@ const DocsCodePreview = ({
           </TabsList>
           <div className="flex gap-2">
             <InstallCommandGroup componentName={name} />
-            {category && itemName && (
+            {/*Page preview*/}
+
+            {/*{category && itemName && (
               <TooltipProvider>
                 <Tooltip>
                   <TooltipTrigger>
@@ -284,7 +284,7 @@ const DocsCodePreview = ({
                   </TooltipContent>
                 </Tooltip>
               </TooltipProvider>
-            )}
+            )}*/}
             <Tooltip>
               <TooltipTrigger asChild>
                 <OpenInV0Button
