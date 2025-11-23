@@ -19,6 +19,7 @@ export const route: Route = {
 const code = `import { betterAuth } from "better-auth";
 // Your email template...
 import { WelcomeEmail } from "@/emails/vercel-welcome";
+// Check https://auth.uprizing.me/docs/3rd-party/resend
 import { sendEmail } from "@/lib/resend";
 
 export const auth = betterAuth({
@@ -31,7 +32,7 @@ export const auth = betterAuth({
             from: "Acme <onboarding@resend.dev>",
             to: user.email,
             subject: "Welcome to Our Service!",
-            // Provide name and email.
+            // Provide user name and email.
             react: WelcomeEmail({ name: user.name, email: user.email }),
           });
         },
