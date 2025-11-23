@@ -1,17 +1,7 @@
-import {
-  codeBlock,
-  codeCommandX,
-  codePreview,
-  desc,
-  image,
-  links,
-  subdesc,
-  subtitle,
-  title,
-} from "@/types/docs";
+import { getComponentCode } from "@/lib/get-component-code";
+import { codePreview, desc, links, subtitle, title } from "@/types/docs";
 import type { RegistryItem } from "@/types/registry";
 import type Route from "@/types/route";
-import { getComponentCode } from "@/lib/get-component-code";
 import Avatar01Component from "./avatar-01-component";
 import Avatar02Component from "./avatar-02-component";
 import Avatar03Component from "./avatar-03-component";
