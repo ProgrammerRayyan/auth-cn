@@ -26,7 +26,17 @@ export const metadata: Metadata = {
   title: "Auth CN",
   description:
     "Full-stack Components for Better Auth built with shadcn/registry.",
-  keywords: ["Better Auth", "Shadcn ui", "Next.js", "React", "JavaScript"],
+  keywords: [
+    "Authcn",
+    "Auth CN",
+    "AuthCN",
+    "Auth",
+    "Better Auth",
+    "Shadcn ui",
+    "Next.js",
+    "React",
+    "JavaScript",
+  ],
   openGraph: {
     title: "Auth CN",
     description:
